@@ -1,0 +1,62 @@
+body {
+    background-color: #f8f8f8; /* цвет фона на всех страницах по умолчанию */
+}
+
+/*Родительский класс container*/
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+/*блок header*/
+.header {
+    height: 70px;
+    background-color: gray;
+}
+
+/*логотип*/
+.logo {
+    float: left;
+    margin: 15px 5px 5px 5px;
+}
+
+/*блок footer*/
+.footer {
+    height: 70px;
+    background-color: gray;
+    text-align: right;
+    padding: 20px;
+}
+
+/*Кнопка для корзины*/
+.button_cart {
+    font-size: 1.5em;
+    background-color: #8B00FF;
+    float: right;
+    margin: 10px;
+}
+
+/*Кнопка купить*/
+.button_buy {
+    font-size: 1.5em;
+    background-color: #8B00FF;
+}
+
+.button_buy:hover {
+    background-color: yellow;
+}
+
+.button_buy:active {
+    background-color: green;
+}
+
+.catalog_item {
+    width: 31%;
+    display: inline-block;
+    padding: 0 10px 20px 10px;
+
+}
+
+.catalog_item img {
+    width: 50%;
+}
