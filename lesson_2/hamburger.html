@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hamburger</title>
+</head>
+<body>
+
+<form action="#">
+
+    <fieldset>
+        <h3>Расчёт стоимости и калорийности гамбургера</h3>
+        <fieldset>
+            <h4>Размер:</h4>
+            <input type="radio" name="size" id="small" data-price="50" data-calories="20" checked>
+            <label for="small">Маленький (50 рублей, 20 калорий)</label>
+            <br>
+            <input type="radio" name="size" id="big" data-price="100" data-calories="40">
+            <label for="big">Большой (100 рублей, 40 калорий)</label><br>
+        </fieldset>
+
+        <fieldset>
+            <h4>Начинка:</h4>
+            <input type="radio" name="filling" id="cheese" data-price="10" data-calories="20" checked>
+            <label for="cheese">С сыром (+10 рублей, +20 калорий)</label>
+            <br>
+            <input type="radio" name="filling" id="salad" data-price="20" data-calories="5">
+            <label for="salad">С салатом (+20 рублей, +5 калорий)</label>
+            <br>
+            <input type="radio" name="filling" id="potato" data-price="15" data-calories="10">
+            <label for="potato">С картофелем (+15 рублей, +10 калорий)</label>
+            <br>
+        </fieldset>
+
+        <fieldset>
+            <h4>Дополнительно:</h4>
+            <input type="checkbox" id="seasoning" data-price="15" data-calories="0">
+            <label for="seasoning">Посыпать приправой (+15 рублей, +0 калорий)</label>
+            <br>
+            <input type="checkbox" id="mayonnaise" data-price="20" data-calories="5">
+            <label for="mayonnaise">Полить майонезом (+20 рублей, +5 калорий)</label>
+            <br>
+        </fieldset>
+
+        <br>
+        <button id="calculate">Рассчитать</button>
+
+    </fieldset>
+
+    <p>
+        Стоимость: <span id="price">0</span>
+        <br>
+        Калорий: <span id="calories">0</span>
+    </p>
+
+</form>
+
+<script>
+
+    class Hamburger {
+
+        constructor() {
+            // size
+            this.price_size = +document.querySelector(`input[name="size"]:checked`).dataset['price'];
+            this.calories_size = +document.querySelector(`input[name="size"]:checked`).dataset['calories'];
+            // filling
+            this.price_filling = +document.querySelector(`input[name="filling"]:checked`).dataset['price'];
+            this.calories_filling = +document.querySelector(`input[name="filling"]:checked`).dataset['calories'];
+            // seasoning
+            this.price_seasoning = 0;
+            this.calories_seasoning = 0;
+            let seasoning = document.getElementById("seasoning")
+            if (seasoning.checked) {
+                this.price_seasoning = +seasoning.dataset['price'];
+                this.calories_seasoning = +seasoning.dataset['calories'];
+            }
+            // mayonnaise
+            this.price_mayonnaise = 0;
+            this.calories_mayonnaise = 0;
+            let mayonnaise = document.getElementById("mayonnaise")
+            if (mayonnaise.checked) {
+                this.price_mayonnaise = +mayonnaise.dataset['price'];
+                this.calories_mayonnaise = +mayonnaise.dataset['calories'];
+            }
+
+            // Итоговые результаты
+            this.price_total = 0; // рассчитаем позднее, пока просто объявим свойство
+            this.calories_total = 0; // рассчитаем позднее, пока просто объявим свойство
+        }
+
+        _calculate() {
+            this.price_total = this.price_size + this.price_filling +
+                this.price_seasoning + this.price_mayonnaise;
+            this.calories_total = this.calories_size + this.calories_filling +
+                this.calories_seasoning + this.calories_mayonnaise;
+        }
+
+        showResult() {
+            this._calculate();
+            document.getElementById("price").textContent = this.price_total;
+            document.getElementById("calories").textContent = this.calories_total;
+        }
+    }
+
+    document.getElementById("calculate").addEventListener('click', () => {
+        let hamburger = new Hamburger();
+        hamburger.showResult();
+    })
+
+</script>
+
+</body>
+</html>
