@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Интернет-магазин</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="app"> <!-- контейнер для объекта Vue -->
+    <header>
+        <div class="logo">E-shop</div>
+        <div class="cart">  <!-- кропка Корзина и блок (контейнер) для вывода содержимого -->
+            <form action="#" class="search-form" @submit.prevent="filter"> <!-- при нажатии кнопки OK вызываем метод filter из объекта Vue -->
+                <input type="text" class="search-field" v-model="userSearch"> <!-- связь со строкой для фильтра -->
+                <button type="submit" class="btn-search">
+                    <i class="fas fa-search"></i>
+                </button>
+            </form>
+            <button class="btn-cart" type="button" @click="showCart = !showCart">Корзина</button> <!-- при нажатии кнопки Корзина показываем или скрываем содержимое корзины -->
+            <div class="cart-block" v-show="showCart"> <!-- переменная showCart определяем видима ли корзина -->
+                <p v-if="!cartItems.length">Cart is empty</p>  <!-- если массив с содержимым корзины пуст то пишем что корзина пуста -->
+                <div class="cart-item" v-for="item of cartItems" :key="item.id_product"> <!-- выводим в цикле все элементы массива -->
+                    <div class="product-bio">
+                        <img :src="imgCart" alt="Some img"> <!-- ссылку на каринку тоже берем из массива в объекте -->
+                        <div class="product-desc">
+                            <div class="product-title">{{ item.product_name }}</div>
+                            <div class="product-quantity">Количество: {{ item.quantity }}</div>
+                            <div class="product-single-price">Цена = $ {{ item.price }} за единицу</div>
+                        </div>
+                    </div>
+                    <div class="right-block">
+                        <div class="product-price">{{item.quantity*item.price}}</div>  <!-- Сумма всего по товару -->
+                        <button class="del-btn" @click="remove(item)">&times;</button>  <!-- Кнопка удалить -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <!-- контейнер для отображения списка товаров в каталоге-->
+        <div class="products">
+            <div class="product-item" v-for="product of filtered" :key="product.id_product">
+                <!-- Список товаров на сайте -->
+                <img :src="imgProduct" alt="Some img">
+                <div class="desc">
+                    <h3>{{product.product_name}}</h3>
+                    <p>{{product.price}}</p>
+                    <button class="buy-btn" @click="addProduct(product)">Купить</button>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+    <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js" integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
