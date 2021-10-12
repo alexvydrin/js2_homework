@@ -1,0 +1,38 @@
+[
+  {
+    "id_product": 1,
+    "product_name": "Kamaz Truck",
+    "product_cat": "грузовой транспорт",
+    "price": 1600
+  },
+  {
+    "id_product": 2,
+    "product_name": "Городской автобус",
+    "product_cat": "пассажирский транспорт",
+    "price": 3000
+  },
+  {
+    "id_product": 3,
+    "product_name": "Kamaz Автобус",
+    "product_cat": "пассажирский транспорт",
+    "price": 45600
+  },
+  {
+    "id_product": 4,
+    "product_name": "Scania Truck",
+    "product_cat": "грузовой транспорт",
+    "price": 45600
+  },
+  {
+    "id_product": 5,
+    "product_name": "Пепелац",
+    "product_cat": "космический транспорт",
+    "price": 45600
+  },
+  {
+    "id_product": 6,
+    "product_name": "Лада Concept",
+    "product_cat": "легковые автомобили",
+    "price": 1000
+  }
+]

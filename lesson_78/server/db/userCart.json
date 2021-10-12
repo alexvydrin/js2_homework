@@ -1,0 +1,13 @@
+{
+    "amount": 46600,
+    "countGoods": 2,
+    "contents": [
+        {
+            "quantity": 2,
+            "id_product": 3,
+            "product_name": "Kamaz Автобус",
+            "product_cat": "пассажирский транспорт",
+            "price": 45600
+        }
+    ]
+}

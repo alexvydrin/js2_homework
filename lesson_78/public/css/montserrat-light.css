@@ -1,0 +1,18 @@
+@font-face {
+    font-family: 'montserrat light';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Montserrat Light'), local('Montserrat-Light'),
+        url('../fonts/montserrat-light.woff') format('woff'), 
+        url('../fonts/montserrat-light.ttf') format('truetype')
+}
+
+
+@font-face {
+    font-family: 'montserrat ultra';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Montserrat Ultra Light'), local('Montserrat-UltraLight'),
+        url('../fonts/Montserrat-UltraLight.woff') format('woff'), 
+        url('../fonts/Montserrat-UltraLight.ttf') format('truetype')
+}

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Electric Cars - Internet Shop</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/raleway-regular.css">
+    <link rel="stylesheet" href="css/montserrat.css">
+    <link rel="stylesheet" href="css/montserrat-light.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
+    <link rel="icon" type="image/png" href="img/favicon.png">
+</head>
+
+<body>
+    <div class="container" id="app">
+
+        <nav class="navbar is-info block m-4 px-4" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+                <a class="navbar-item">
+                    ---=ELECTIRC CARS=---
+                </a>
+                <a class="navbar-item">
+                    Catalogue
+                </a>
+                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
+                    data-target="navbarBasicExample">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
+            <div id="navbarBasicExample" class="navbar-menu">
+                <div class="navbar-start">
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <a class="navbar-link">
+                            More
+                        </a>
+
+                        <div class="navbar-dropdown">
+                            <a class="navbar-item">
+                                About
+                            </a>
+                            <a class="navbar-item">
+                                Jobs
+                            </a>
+                            <a class="navbar-item">
+                                Contact
+                            </a>
+                            <hr class="navbar-divider">
+                            <a class="navbar-item">
+                                Report an issue
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="navbar-end">
+                    <div class="navbar-item">
+                        <div class="buttons">
+                            <cart ref="cart"></cart>
+                            <filter-el></filter-el>
+                            <a class="button is-light">
+                                <strong>Sign up</strong>
+                            </a>
+                            <a class="button is-light">
+                                Log in
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </nav>
+
+        <main>
+            <section class="latest-proj">
+                <h2 class="title is-4">Electric Cars Catalogue</h2>
+                <products ref="products"></products>
+
+            </section>
+
+        </main>
+
+        <footer class="footer">
+            <section class="hero is-info">
+                <div class="hero-body">
+
+                    <div class="columns">
+                        <div class="column">
+                            <h2 class="title is-2">Interested in our products?</h2>
+                            <div class="block">
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error quae culpa, quod est
+                                accusamus, voluptatibus commodi totam ducimus beatae saepe fuga illum sed adipisci
+                                optio!
+                            </div>
+
+                        </div>
+                        <div class="column">
+                            <h2 class="title is-2">Contact us</h2>
+                            <ul>
+                                <li>Tel: +7(495)222-2222</li>
+                                <li>E-mail: abc@example.com</li>
+                                <li>Address: Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error quae culpa,
+                                    quod est
+                                    accusamus, voluptatibus commodi totam ducimus beatae saepe fuga illum sed adipisci
+                                    optio!</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="content has-text-centered">
+                <p>
+                    <strong>Dmitry Rybko</strong> - GB JavaScript Homework 07
+                </p>
+            </div>
+        </footer>
+
+
+    </div>
+    <script src=" https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="js/CartComp.js"></script>
+    <script src="js/ProducComp.js"></script>
+    <script src="js/FilterComp.js"></script>
+    <script src="js/ErrorComp.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
